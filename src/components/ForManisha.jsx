@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import ImageSlider from "../components/common/ImageSlider";
 import musicFile from "../assets/music.mp3";
-import Page2Slider from '../components/common/Page2Slider'
+import Page2Slider from "../components/common/Page2Slider";
 
 const ForManisha = () => {
   const effectsRef = useRef(null);
   const musicRef = useRef(null);
 
-const [page, setPage] = useState(1);
-const [playing, setPlaying] = useState(false);
-const [time, setTime] = useState({ d: 0, h: 0, m: 0, s: 0 });
-const [showBtn, setShowBtn] = useState(false);
-const [showStory, setShowStory] = useState(false); 
+  const [page, setPage] = useState(1);
+  const [playing, setPlaying] = useState(false);
+  const [time, setTime] = useState({ d: 0, h: 0, m: 0, s: 0 });
+  const [showBtn, setShowBtn] = useState(false);
+  const [showStory, setShowStory] = useState(false);
 
   /* COUNTDOWN */
   useEffect(() => {
@@ -41,18 +41,17 @@ const [showStory, setShowStory] = useState(false);
 
     return () => clearInterval(timer);
   }, []);
-    
-    useEffect(() => {
-      if (page === 2) {
-        setShowStory(false);
-        const t = setTimeout(() => {
-          setShowStory(true);
-        }, 2000); // 2 sec delay
 
-        return () => clearTimeout(t);
-      }
-    }, [page]);
+  useEffect(() => {
+    if (page === 2) {
+      setShowStory(false);
+      const t = setTimeout(() => {
+        setShowStory(true);
+      }, 2000); // 2 sec delay
 
+      return () => clearTimeout(t);
+    }
+  }, [page]);
 
   /* HEARTS */
   useEffect(() => {
@@ -92,7 +91,7 @@ const [showStory, setShowStory] = useState(false);
   };
 
   return (
-    <div className="min-h-screen mt-2 bg-gradient-to-br from-pink-300 to-purple-400 text-white overflow-x-hidden relative">
+    <div className="min-h-screen mt-2 mb-2 bg-gradient-to-br from-pink-300 to-purple-400 text-white overflow-x-hidden relative">
       {/* Inline animations */}
       <style>{`
         .heart {
