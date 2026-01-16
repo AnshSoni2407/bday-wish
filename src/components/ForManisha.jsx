@@ -91,7 +91,7 @@ const ForManisha = () => {
   };
 
   return (
-    <div className="min-h-screen mt-2 mb-2 bg-gradient-to-br from-pink-300 to-purple-400 text-white overflow-x-hidden relative">
+    <div className="min-h-screen py-3 bg-gradient-to-br from-pink-300 to-purple-400 text-white overflow-x-hidden relative">
       {/* Inline animations */}
       <style>{`
         .heart {
