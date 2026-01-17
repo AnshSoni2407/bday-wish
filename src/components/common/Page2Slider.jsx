@@ -22,7 +22,7 @@ const page2Slides = [
 ];
 
 const Page2Slider = ({ showStory }) => {
-  const navigate = useNavigate(); // ✅ FIX HERE
+  const navigate = useNavigate(); 
 
   const [index, setIndex] = useState(0);
   const startX = useRef(0);

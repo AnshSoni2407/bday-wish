@@ -42,7 +42,7 @@ const CandleBlow = () => {
       dataArrayRef.current.length;
 
     // 🔥 sensitivity (mobile ke liye 45–55)
-    if (volume > 60) {
+    if (volume > 40) {
       blowCandle();
       return;
     }
