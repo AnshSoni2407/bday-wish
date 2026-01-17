@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import VideoCollage from "./VideoCollage";
 
 const CandleBlow = () => {
   const [stage, setStage] = useState("before"); // before | blowing | after
   const [listening, setListening] = useState(false);
+  const [showVideo, setshowVideo] = useState(false)
 
   const audioContextRef = useRef(null);
   const analyserRef = useRef(null);
@@ -114,6 +116,12 @@ const CandleBlow = () => {
           </p>
         </>
       )}
+      {stage == "after" &&
+        setTimeout(() => {
+          setshowVideo(true);
+        }, 5000)}
+
+      {showVideo && <VideoCollage />}
     </div>
   );
 };
