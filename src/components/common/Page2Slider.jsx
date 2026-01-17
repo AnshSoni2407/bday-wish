@@ -3,26 +3,26 @@ import { useNavigate } from "react-router-dom";
 
 const page2Slides = [
   {
-    img: "/Manisha/img4.jpg",
-    text: "Manisha, 💖",
+    img: "/Manisha/img4.jpeg",
+    text: "Mansi, 💖",
   },
   {
-    img: "/Manisha/img5.jpg",
+    img: "/Manisha/img5.jpeg",
     text: "Countdown khatam… ⏳",
   },
   {
-    img: "/Manisha/img6.jpg",
+    img: "/Manisha/img6.jpeg",
     text: "Music chal raha… 🎵",
   },
   {
-    img: "/Manisha/img6.jpg",
+    img: "/Manisha/img6.jpeg",
     text: "Aur ye sirf shuruaat hai 💕",
     isLast: true,
   },
 ];
 
 const Page2Slider = ({ showStory }) => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const [index, setIndex] = useState(0);
   const startX = useRef(0);

@@ -2,15 +2,15 @@ import { useEffect, useRef, useState } from "react";
 
 const slides = [
   {
-    img: "/Manisha/img1.jpg",
+    img: "/Manisha/img1.jpeg",
     text: "Tumhari ye muskaan hi mera sabse bada gift hai 💖",
   },
   {
-    img: "/Manisha/img2.jpg",
-    text: "Tum sirf meri mohabbat nahi, meri taqat ho ❤️",
+    img: "/Manisha/img2.jpeg",
+    text: " Tum mere liye kisi dua se kam nahi ho 💫❤️",
   },
   {
-    img: "/Manisha/img3.jpg",
+    img: "/Manisha/img3.jpeg",
     text: "Har rang tum pe jachta hai 💕",
   },
 ];

@@ -1,6 +1,7 @@
 import React from "react";
 import collage from "../assets/collage.MP4";
 import { useNavigate } from "react-router-dom";
+import image from '../../public/Manisha/img6.jpeg'
 
 const VideoCollage = () => {
   const navigate = useNavigate();
@@ -13,14 +14,18 @@ const VideoCollage = () => {
       </div>{" "}
       <div className="relative w-full max-w-4xl rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-md bg-black/30 border border-white/20 p-6">
         {/* 🎥 Video */}
-        <video
+        {/* <video
           src={collage}
           autoPlay
           loop
           muted
           playsInline
           className="w-full h-[70vh] object-cover rounded-2xl shadow-lg"
-        />
+        /> */}
+
+        {/* Image */}
+
+        <img src={image} alt="img" />
 
         {/* 🎊 Button */}
         <div className="flex justify-center mt-6">

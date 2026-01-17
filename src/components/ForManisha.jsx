@@ -17,7 +17,7 @@ const ForManisha = () => {
 
   /* COUNTDOWN */
   useEffect(() => {
-    const target = new Date("2026-01-17T20:30:00").getTime();
+    const target = new Date("2026-01-18T00:00:00").getTime();
     let blasted = false;
 
     const timer = setInterval(() => {
@@ -55,14 +55,13 @@ const ForManisha = () => {
 
     setTimeout(() => heart.remove(), 8000);
   };
-useEffect(() => {
-  const interval = setInterval(() => {
-    heartRain();
-  }, 400);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      heartRain();
+    }, 400);
 
-  return () => clearInterval(interval);
-}, []);
-
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (page === 2) {
@@ -137,7 +136,7 @@ useEffect(() => {
         <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center z-10">
           <ImageSlider />
 
-          <h1 className="text-5xl font-bold mb-2">Manisha 💖</h1>
+          <h1 className="text-5xl font-bold mb-2">Mansi 💖</h1>
           <p className="opacity-90 mb-6">Something special is coming…</p>
 
           <div className="flex gap-4 flex-wrap justify-center">
