@@ -8,7 +8,7 @@ const ForManisha = () => {
   const musicRef = useRef(null);
 
   const [page, setPage] = useState(1);
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);
   const [time, setTime] = useState({ d: 0, h: 0, m: 0, s: 0 });
   const [showBtn, setShowBtn] = useState(false);
   const [showStory, setShowStory] = useState(false);
