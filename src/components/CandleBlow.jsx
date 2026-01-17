@@ -1,30 +1,38 @@
 import { useEffect, useRef, useState } from "react";
-import VideoCollage from "./VideoCollage";
+import { useNavigate } from "react-router-dom";
 
 const CandleBlow = () => {
   const [stage, setStage] = useState("before"); // before | blowing | after
   const [listening, setListening] = useState(false);
-  const [showVideo, setshowVideo] = useState(false)
 
   const audioContextRef = useRef(null);
   const analyserRef = useRef(null);
   const dataArrayRef = useRef(null);
   const animationRef = useRef(null);
 
+  const navigate = useNavigate();
+
+  /* 🔁 Reset stage when page loads */
+  useEffect(() => {
+    setStage("before");
+    setListening(false);
+  }, []);
+
   // 🎤 Start mic & detect blow
   const startListening = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
 
-      audioContextRef.current = new (window.AudioContext ||
-        window.webkitAudioContext)();
+      audioContextRef.current = new (
+        window.AudioContext || window.webkitAudioContext
+      )();
 
       const source = audioContextRef.current.createMediaStreamSource(stream);
       analyserRef.current = audioContextRef.current.createAnalyser();
 
       analyserRef.current.fftSize = 256;
       dataArrayRef.current = new Uint8Array(
-        analyserRef.current.frequencyBinCount
+        analyserRef.current.frequencyBinCount,
       );
 
       source.connect(analyserRef.current);
@@ -43,7 +51,6 @@ const CandleBlow = () => {
       dataArrayRef.current.reduce((a, b) => a + b, 0) /
       dataArrayRef.current.length;
 
-    // 🔥 sensitivity (mobile ke liye 45–55)
     if (volume > 40) {
       blowCandle();
       return;
@@ -62,6 +69,11 @@ const CandleBlow = () => {
     }, 2500);
   };
 
+  const resetCandle = () => {
+    setStage("before");
+    setListening(false);
+  };
+
   useEffect(() => {
     return () => cancelAnimationFrame(animationRef.current);
   }, []);
@@ -78,12 +90,12 @@ const CandleBlow = () => {
           <img
             src="/bg/ChatGPT_Image_Jan_17__2026__02_33_21_AM-removebg-preview.png"
             alt="Cake with candle"
-            className="w-72 md:w-80 drop-shadow-[0_10px_25px_rgba(255,255,255,0.15)] animate-fadeIn"
+            className="w-72 md:w-80 animate-fadeIn"
           />
 
           <button
             onClick={startListening}
-            className="mt-6 px-8 py-3 rounded-full bg-pink-500 hover:bg-pink-600 transition-all duration-300 shadow-lg text-lg font-semibold"
+            className="mt-6 px-8 py-3 rounded-full bg-pink-500 hover:bg-pink-600 transition-all shadow-lg text-lg font-semibold"
           >
             {listening ? "Blow the Candle 💨" : "Start Mic 🎤"}
           </button>
@@ -111,17 +123,18 @@ const CandleBlow = () => {
             alt="After blow"
             className="w-72 md:w-80 animate-fadeIn"
           />
-          <p className="mt-4 text-xl font-semibold text-pink-400">
-            🎊 Wish Granted 🎊
-          </p>
+
+          <button
+            onClick={() => {
+              resetCandle();
+              navigate("/video");
+            }}
+            className="mt-4 text-xl font-semibold bg-pink-400 text-white py-4 px-6 rounded-2xl"
+          >
+            🎊 Another Surprise 🎊
+          </button>
         </>
       )}
-      {stage == "after" &&
-        setTimeout(() => {
-          setshowVideo(true);
-        }, 5000)}
-
-      {showVideo && <VideoCollage />}
     </div>
   );
 };

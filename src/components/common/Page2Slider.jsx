@@ -32,7 +32,7 @@ const Page2Slider = ({ showStory }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev < page2Slides.length - 1 ? prev + 1 : prev));
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(timer);
   }, []);
