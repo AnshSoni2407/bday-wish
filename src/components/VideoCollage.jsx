@@ -1,6 +1,7 @@
 import React from "react";
-import collage from "../assets/collage.mp4";
+import collage from "../../assets/collage.mp4";
 import { useNavigate } from "react-router-dom";
+
 
 const VideoCollage = () => {
   const navigate = useNavigate();
