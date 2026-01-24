@@ -1,31 +1,27 @@
 import React from "react";
-import collage from "../assets/collage.MP4";
+import collage from "../assets/collage.mp4";
 import { useNavigate } from "react-router-dom";
-import image from '../../public/Manisha/img6.jpeg'
 
 const VideoCollage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="h-screen w-full flex items-center justify-center bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-700 text-white">
+    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-700 text-white">
       {/* ✨ Overlay Text */}
       <div className="fixed top-6 left-8 text-3xl font-bold drop-shadow-lg z-20">
         💖 Our Beautiful Moments 💖
-      </div>{" "}
+      </div>
+
       <div className="relative w-full max-w-4xl rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-md bg-black/30 border border-white/20 p-6">
         {/* 🎥 Video */}
-        {/* <video
+        <video
           src={collage}
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-[70vh] object-cover rounded-2xl shadow-lg"
-        /> */}
-
-        {/* Image */}
-
-        <img src={image} alt="img" />
+          className="w-full max-h-[70vh] object-contain rounded-2xl shadow-lg bg-black"
+        />
 
         {/* 🎊 Button */}
         <div className="flex justify-center mt-6">

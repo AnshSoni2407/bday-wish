@@ -1,19 +1,41 @@
 import { useEffect, useRef, useState } from "react";
+import images from "../../assets/images";
 
 const slides = [
   {
-    img: "/Manisha/img1.jpeg",
+    img: images.ps2,
     text: "Tumhari ye muskaan hi mera sabse bada gift hai 💖",
   },
   {
-    img: "/Manisha/img2.jpeg",
-    text: " Tum mere liye kisi dua se kam nahi ho 💫❤️",
+    img: images.ps1,
+    text: "Tum mere liye kisi dua se kam nahi ho 💫❤️",
   },
   {
-    img: "/Manisha/img3.jpeg",
+    img: images.ps3,
     text: "Har rang tum pe jachta hai 💕",
   },
+  {
+    img: images.ps4,
+    text: "You make my heart skip a beat ❤️",
+  },
+  {
+    img: images.ps5,
+    text: "You are my all of today and all of my tomorrow 💞",
+  },
+  {
+    img: images.ps6,
+    text: "You are my happy place 🌸",
+  },
+  {
+    img: images.ps7,
+    text: "I pick you, always and forever ♾️❤️",
+  },
+  {
+    img: images.ps8,
+    text: "My world in a picture 🌍💖",
+  },
 ];
+
 
 const ImageSlider = () => {
   const [index, setIndex] = useState(0);
@@ -41,11 +63,16 @@ const ImageSlider = () => {
   const onTouchEnd = () => {
     const diff = startX.current - endX.current;
 
-    if (diff > 50) {
+    if (Math.abs(diff) < 50) return;
+
+    if (diff > 0) {
       setIndex((prev) => (prev + 1) % slides.length);
-    } else if (diff < -50) {
+    } else {
       setIndex((prev) => (prev - 1 + slides.length) % slides.length);
     }
+
+    startX.current = 0;
+    endX.current = 0;
   };
 
   return (
@@ -62,11 +89,17 @@ const ImageSlider = () => {
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
           {slides.map((slide, i) => (
-            <div key={i} className="min-w-full flex justify-center px-4">
-              <div className="relative w-full max-w-[340px] rounded-[2rem] overflow-hidden shadow-2xl bg-black/40 backdrop-blur-lg border border-white/20 flex items-center justify-center h-[420px]">
+            <div
+              key={i}
+              className={`min-w-full flex justify-center px-4 transition-transform duration-700 ${
+                index === i ? "scale-100" : "scale-95 opacity-80"
+              }`}
+            >
+              <div className="relative w-full max-w-[340px] h-[420px] rounded-[2rem] overflow-hidden shadow-2xl bg-black/40 backdrop-blur-lg border border-white/20 flex items-center justify-center">
                 <img
                   src={slide.img}
-                  alt="slide"
+                  alt={`slide-${i}`}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
 

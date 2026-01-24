@@ -1,21 +1,25 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import pa1 from "../../assets/Anuj/pa1.jpeg";
+import pa2 from "../../assets/Anuj/pa2.jpeg";
+import pa3 from "../../assets/Anuj/pa3.jpeg";
+import pa4 from "../../assets/Anuj/pa4.jpeg";
 
 const page2Slides = [
   {
-    img: "/Manisha/img4.jpeg",
-    text: "Mansi, 💖",
+    img: pa1,
+    text: "PRATYUSH, 💖",
   },
   {
-    img: "/Manisha/img5.jpeg",
+    img: pa2,
     text: "Countdown khatam… ⏳",
   },
   {
-    img: "/Manisha/img6.jpeg",
+    img: pa3,
     text: "Music chal raha… 🎵",
   },
   {
-    img: "/Manisha/img6.jpeg",
+    img: pa4,
     text: "Aur ye sirf shuruaat hai 💕",
     isLast: true,
   },
@@ -70,7 +74,7 @@ const Page2Slider = ({ showStory }) => {
     >
       {/* SLIDER */}
       <div
-        className="flex transition-transform duration-700 ease-out"
+        className=" flex transition-transform duration-700 ease-out"
         style={{ transform: `translateX(-${index * 100}%)` }}
       >
         {page2Slides.map((slide, i) => (
@@ -79,7 +83,7 @@ const Page2Slider = ({ showStory }) => {
             className="min-w-full flex flex-col items-center text-center"
           >
             {/* IMAGE */}
-            <div className="w-full h-[320px] rounded-2xl overflow-hidden mb-6 shadow-xl">
+            <div className="w-full h-[320px] rounded-2xl overflow-hidden mb-6  shadow-xl">
               <img src={slide.img} className="w-full h-full object-cover" />
             </div>
 

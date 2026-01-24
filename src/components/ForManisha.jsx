@@ -136,7 +136,7 @@ const ForManisha = () => {
         <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center z-10">
           <ImageSlider />
 
-          <h1 className="text-5xl font-bold mb-2">Mansi 💖</h1>
+          <h1 className="text-5xl font-bold mb-2">PRATYUSH 😎</h1>
           <p className="opacity-90 mb-6">Something special is coming…</p>
 
           <div className="flex gap-4 flex-wrap justify-center">
