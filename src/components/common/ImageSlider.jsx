@@ -1,37 +1,46 @@
 import { useEffect, useRef, useState } from "react";
+import ps1 from '../../assets/Anuj/ps1.jpeg'
+import ps2 from "../../assets/Anuj/ps1.jpeg";
+import ps3 from "../../assets/Anuj/ps1.jpeg";
+import ps4 from "../../assets/Anuj/ps1.jpeg";
+import ps5 from "../../assets/Anuj/ps1.jpeg";
+import ps6 from "../../assets/Anuj/ps1.jpeg";
+import ps7 from "../../assets/Anuj/ps1.jpeg";
+import ps8 from "../../assets/Anuj/ps1.jpeg";
+
 import images from "../../assets/images";
 
 const slides = [
   {
-    img: images.ps2,
+    img: ps2,
     text: "Tumhari ye muskaan hi mera sabse bada gift hai 💖",
   },
   {
-    img: images.ps1,
+    img: ps1,
     text: "Tum mere liye kisi dua se kam nahi ho 💫❤️",
   },
   {
-    img: images.ps3,
+    img: ps3,
     text: "Har rang tum pe jachta hai 💕",
   },
   {
-    img: images.ps4,
+    img: ps4,
     text: "You make my heart skip a beat ❤️",
   },
   {
-    img: images.ps5,
+    img: ps5,
     text: "You are my all of today and all of my tomorrow 💞",
   },
   {
-    img: images.ps6,
+    img: ps6,
     text: "You are my happy place 🌸",
   },
   {
-    img: images.ps7,
+    img: ps7,
     text: "I pick you, always and forever ♾️❤️",
   },
   {
-    img: images.ps8,
+    img: ps8,
     text: "My world in a picture 🌍💖",
   },
 ];
